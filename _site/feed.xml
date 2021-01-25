@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2021-01-25T22:41:42+00:00</updated><id>http://localhost:4000/feed.xml</id><entry><title type="html">Ui Testing</title><link href="http://localhost:4000/2021/01/25/ui-testing.html" rel="alternate" type="text/html" title="Ui Testing" /><published>2021-01-25T00:00:00+00:00</published><updated>2021-01-25T00:00:00+00:00</updated><id>http://localhost:4000/2021/01/25/ui-testing</id><content type="html" xml:base="http://localhost:4000/2021/01/25/ui-testing.html">&lt;h1 id=&quot;the-perils-of-ui-testing&quot;&gt;The perils of UI testing&lt;/h1&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2021-01-25T22:53:04+00:00</updated><id>http://localhost:4000/feed.xml</id><entry><title type="html">Ui Testing</title><link href="http://localhost:4000/2021/01/25/ui-testing.html" rel="alternate" type="text/html" title="Ui Testing" /><published>2021-01-25T00:00:00+00:00</published><updated>2021-01-25T00:00:00+00:00</updated><id>http://localhost:4000/2021/01/25/ui-testing</id><content type="html" xml:base="http://localhost:4000/2021/01/25/ui-testing.html">&lt;h1 id=&quot;the-perils-of-ui-testing&quot;&gt;The perils of UI testing&lt;/h1&gt;
 
 &lt;p&gt;UI automation testing has a fairly bad rep in our industry, but is it fair? Or is it because we are doing it wrong?&lt;/p&gt;
 
@@ -16,7 +16,7 @@
 
 &lt;p&gt;It makes sense doesn’t it? We write apps with heavy amounts of UI, so performing a manual regression test is time consuming and error prone. A fellow Smith once had the following sage advice:&lt;/p&gt;
 
-&lt;p&gt;‘Never send a human to do a machine’s job’&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Never send a human to do a machine’s job&lt;/em&gt;&lt;/p&gt;
 
 &lt;p&gt;So the desire is to automate it to save time and effort. There’s no shortage of tools around that claim to make it easy and with next to no technical skills. These are companies that want to sell you something so of course would say that. Whilst initially easy, maintainability is likely to be an issue.&lt;/p&gt;
 
@@ -60,7 +60,7 @@ This collaborative approach is what Agile was meant to be about.&lt;/p&gt;
 
 &lt;p&gt;As crazy as this sounds as we’re talking about UI testing we should try and avoid testing via the UI if possible. The password strength-o-meter mentioned above can be tested below the UI. It would be better to test the different combinations of passwords and their scores without the UI. The portion that we should test via the UI should be along the lines of:&lt;/p&gt;
 
-&lt;p&gt;“Given a score is returned, then it’s displayed on the screen”&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Given a score is returned, then it’s displayed on the screen&lt;/code&gt;&lt;/p&gt;
 
 &lt;p&gt;We could have many different test cases below the UI that would be quick and robust then 1 or 2 basic tests via the UI.&lt;/p&gt;
 
@@ -95,20 +95,22 @@ Architecture. How to ‘layer’ the testing system so it is easy to reuse diffe
 
 &lt;p&gt;The tests should tell you what the feature is in business terms, not how to get there. For example a login test might read:&lt;/p&gt;
 
-&lt;p&gt;Given I’m on the home screen
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Given I’m on the home screen
 And I click on the ‘sign in’ element
 And I enter ‘dangerousdave’ into the ‘username’ field
 And I enter ‘flibble’ into the ‘password’ field
 When I click on the ‘login’ button
 Then I am on the home screen
-And the ‘balance’ element contains ‘50 dollars’&lt;/p&gt;
+And the ‘balance’ element contains ‘50 dollars’
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;This is a script, not a specification. It’s also highly coupled to the UI, which means if the UI changes the test breaks and the specification no longer reflects what it is meant to do. It’s better to use a more declarative approach, such as:&lt;/p&gt;
 
-&lt;p&gt;Given a username of ‘dangerousdave’
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Given a username of ‘dangerousdave’
 And a password of ‘flibble’
 When I attempt to login
-Then I should be logged in with a balance of ‘50 dollars’&lt;/p&gt;
+Then I should be logged in with a balance of ‘50 dollars’
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;If the UI changes in this instance, then this specification does not need to change.&lt;/p&gt;
 
@@ -128,4 +130,4 @@ Then I should be logged in with a balance of ‘50 dollars’&lt;/p&gt;
 
 &lt;p&gt;I think the bad reputation is justified but a lot of the problems with it are some of the reasons I’ve mentioned above (so yes, we are doing it wrong). If your test suite is slow, no-one will want to wait for it to complete as we want fast feedback. Also, if they are intermittently failing, more and more time will be expended on trying to fix them, diverting precious resources away from high profile paying work.&lt;/p&gt;
 
-&lt;p&gt;If we focus the tests and limit their scope there is probably merit in doing them, but as with most things in life, do it in moderation.&lt;/p&gt;</content><author><name>jill</name></author><summary type="html">The perils of UI testing</summary></entry></feed>
+&lt;p&gt;If we focus the tests and limit their scope there is probably merit in doing them, but as with most things in life, do it in moderation.&lt;/p&gt;</content><author><name>andy</name></author><summary type="html">The perils of UI testing</summary></entry></feed>

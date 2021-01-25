@@ -9,7 +9,7 @@
 <title>Ui Testing</title>
 <meta name="generator" content="Jekyll v3.9.0" />
 <meta property="og:title" content="Ui Testing" />
-<meta name="author" content="jill" />
+<meta name="author" content="andy" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="The perils of UI testing" />
 <meta property="og:description" content="The perils of UI testing" />
@@ -20,7 +20,7 @@
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="Ui Testing" />
 <script type="application/ld+json">
-{"url":"http://localhost:4000/2021/01/25/ui-testing.html","headline":"Ui Testing","dateModified":"2021-01-25T00:00:00+00:00","datePublished":"2021-01-25T00:00:00+00:00","author":{"@type":"Person","name":"jill"},"mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2021/01/25/ui-testing.html"},"description":"The perils of UI testing","@type":"BlogPosting","@context":"https://schema.org"}</script>
+{"mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2021/01/25/ui-testing.html"},"url":"http://localhost:4000/2021/01/25/ui-testing.html","author":{"@type":"Person","name":"andy"},"headline":"Ui Testing","description":"The perils of UI testing","datePublished":"2021-01-25T00:00:00+00:00","dateModified":"2021-01-25T00:00:00+00:00","@type":"BlogPosting","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
   </head>
@@ -47,10 +47,10 @@
 
     <h1>Ui Testing</h1>
 <p>
-  25 Jan 2021 - jill
+  25 Jan 2021 - andy
   
   
-    - <a href="/authors/jill.html">Jill Smith</a>
+    - <a href="/authors/andy.html">Andy Smith</a>
   
 </p>
 
@@ -72,7 +72,7 @@
 
 <p>It makes sense doesn’t it? We write apps with heavy amounts of UI, so performing a manual regression test is time consuming and error prone. A fellow Smith once had the following sage advice:</p>
 
-<p>‘Never send a human to do a machine’s job’</p>
+<p><em>Never send a human to do a machine’s job</em></p>
 
 <p>So the desire is to automate it to save time and effort. There’s no shortage of tools around that claim to make it easy and with next to no technical skills. These are companies that want to sell you something so of course would say that. Whilst initially easy, maintainability is likely to be an issue.</p>
 
@@ -116,7 +116,7 @@ This collaborative approach is what Agile was meant to be about.</p>
 
 <p>As crazy as this sounds as we’re talking about UI testing we should try and avoid testing via the UI if possible. The password strength-o-meter mentioned above can be tested below the UI. It would be better to test the different combinations of passwords and their scores without the UI. The portion that we should test via the UI should be along the lines of:</p>
 
-<p>“Given a score is returned, then it’s displayed on the screen”</p>
+<p><code class="language-plaintext highlighter-rouge">Given a score is returned, then it’s displayed on the screen</code></p>
 
 <p>We could have many different test cases below the UI that would be quick and robust then 1 or 2 basic tests via the UI.</p>
 
@@ -151,20 +151,22 @@ Architecture. How to ‘layer’ the testing system so it is easy to reuse diffe
 
 <p>The tests should tell you what the feature is in business terms, not how to get there. For example a login test might read:</p>
 
-<p>Given I’m on the home screen
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Given I’m on the home screen
 And I click on the ‘sign in’ element
 And I enter ‘dangerousdave’ into the ‘username’ field
 And I enter ‘flibble’ into the ‘password’ field
 When I click on the ‘login’ button
 Then I am on the home screen
-And the ‘balance’ element contains ‘50 dollars’</p>
+And the ‘balance’ element contains ‘50 dollars’
+</code></pre></div></div>
 
 <p>This is a script, not a specification. It’s also highly coupled to the UI, which means if the UI changes the test breaks and the specification no longer reflects what it is meant to do. It’s better to use a more declarative approach, such as:</p>
 
-<p>Given a username of ‘dangerousdave’
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Given a username of ‘dangerousdave’
 And a password of ‘flibble’
 When I attempt to login
-Then I should be logged in with a balance of ‘50 dollars’</p>
+Then I should be logged in with a balance of ‘50 dollars’
+</code></pre></div></div>
 
 <p>If the UI changes in this instance, then this specification does not need to change.</p>
 

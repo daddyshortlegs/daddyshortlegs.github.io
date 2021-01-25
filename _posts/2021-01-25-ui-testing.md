@@ -1,6 +1,6 @@
 ---
 layout: post
-author: jill
+author: andy
 ---
 # The perils of UI testing
 
@@ -20,7 +20,7 @@ Just what is going wrong?
 
 It makes sense doesn’t it? We write apps with heavy amounts of UI, so performing a manual regression test is time consuming and error prone. A fellow Smith once had the following sage advice:
 
-'Never send a human to do a machine's job'
+*Never send a human to do a machine's job*
 
 So the desire is to automate it to save time and effort. There’s no shortage of tools around that claim to make it easy and with next to no technical skills. These are companies that want to sell you something so of course would say that. Whilst initially easy, maintainability is likely to be an issue.
 
@@ -64,7 +64,7 @@ This collaborative approach is what Agile was meant to be about.
 
 As crazy as this sounds as we’re talking about UI testing we should try and avoid testing via the UI if possible. The password strength-o-meter mentioned above can be tested below the UI. It would be better to test the different combinations of passwords and their scores without the UI. The portion that we should test via the UI should be along the lines of: 
 
-“Given a score is returned, then it’s displayed on the screen”
+`Given a score is returned, then it’s displayed on the screen`
 
 We could have many different test cases below the UI that would be quick and robust then 1 or 2 basic tests via the UI.
 
@@ -99,6 +99,7 @@ Architecture. How to ‘layer’ the testing system so it is easy to reuse diffe
 
 The tests should tell you what the feature is in business terms, not how to get there. For example a login test might read:
 
+```
 Given I’m on the home screen
 And I click on the ‘sign in’ element
 And I enter ‘dangerousdave’ into the ‘username’ field
@@ -106,13 +107,16 @@ And I enter ‘flibble’ into the ‘password’ field
 When I click on the ‘login’ button
 Then I am on the home screen
 And the ‘balance’ element contains ‘50 dollars’
+```
 
 This is a script, not a specification. It’s also highly coupled to the UI, which means if the UI changes the test breaks and the specification no longer reflects what it is meant to do. It’s better to use a more declarative approach, such as:
 
+```
 Given a username of ‘dangerousdave’
 And a password of ‘flibble’
 When I attempt to login
 Then I should be logged in with a balance of ‘50 dollars’
+```
 
 If the UI changes in this instance, then this specification does not need to change.
 
