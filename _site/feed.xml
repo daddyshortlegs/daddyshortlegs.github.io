@@ -1,21 +1,131 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2021-01-25T22:16:49+00:00</updated><id>http://localhost:4000/feed.xml</id><entry><title type="html">Kiwifruit</title><link href="http://localhost:4000/2018/08/22/kiwifruit.html" rel="alternate" type="text/html" title="Kiwifruit" /><published>2018-08-22T00:00:00+01:00</published><updated>2018-08-22T00:00:00+01:00</updated><id>http://localhost:4000/2018/08/22/kiwifruit</id><content type="html" xml:base="http://localhost:4000/2018/08/22/kiwifruit.html">&lt;p&gt;Kiwifruit (often abbreviated as kiwi), or Chinese gooseberry is the edible
-berry of several species of woody vines in the genus Actinidia.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2021-01-25T22:41:42+00:00</updated><id>http://localhost:4000/feed.xml</id><entry><title type="html">Ui Testing</title><link href="http://localhost:4000/2021/01/25/ui-testing.html" rel="alternate" type="text/html" title="Ui Testing" /><published>2021-01-25T00:00:00+00:00</published><updated>2021-01-25T00:00:00+00:00</updated><id>http://localhost:4000/2021/01/25/ui-testing</id><content type="html" xml:base="http://localhost:4000/2021/01/25/ui-testing.html">&lt;h1 id=&quot;the-perils-of-ui-testing&quot;&gt;The perils of UI testing&lt;/h1&gt;
 
-&lt;p&gt;The most common cultivar group of kiwifruit is oval, about the size of a large
-hen’s egg (5–8 cm (2.0–3.1 in) in length and 4.5–5.5 cm (1.8–2.2 in) in
-diameter). It has a fibrous, dull greenish-brown skin and bright green or
-golden flesh with rows of tiny, black, edible seeds. The fruit has a soft
-texture, with a sweet and unique flavor.&lt;/p&gt;</content><author><name>ted</name></author><summary type="html">Kiwifruit (often abbreviated as kiwi), or Chinese gooseberry is the edible berry of several species of woody vines in the genus Actinidia.</summary></entry><entry><title type="html">Apples</title><link href="http://localhost:4000/2018/08/21/apples.html" rel="alternate" type="text/html" title="Apples" /><published>2018-08-21T00:00:00+01:00</published><updated>2018-08-21T00:00:00+01:00</updated><id>http://localhost:4000/2018/08/21/apples</id><content type="html" xml:base="http://localhost:4000/2018/08/21/apples.html">&lt;p&gt;An apple is a sweet, edible fruit produced by an apple tree.&lt;/p&gt;
+&lt;p&gt;UI automation testing has a fairly bad rep in our industry, but is it fair? Or is it because we are doing it wrong?&lt;/p&gt;
 
-&lt;p&gt;Apple trees are cultivated worldwide, and are the most widely grown species in
-the genus Malus. The tree originated in Central Asia, where its wild ancestor,
-Malus sieversii, is still found today. Apples have been grown for thousands of
-years in Asia and Europe, and were brought to North America by European
-colonists.&lt;/p&gt;</content><author><name>jill</name></author><summary type="html">An apple is a sweet, edible fruit produced by an apple tree.</summary></entry><entry><title type="html">Bananas</title><link href="http://localhost:4000/2018/08/20/bananas.html" rel="alternate" type="text/html" title="Bananas" /><published>2018-08-20T00:00:00+01:00</published><updated>2018-08-20T00:00:00+01:00</updated><id>http://localhost:4000/2018/08/20/bananas</id><content type="html" xml:base="http://localhost:4000/2018/08/20/bananas.html">&lt;p&gt;A banana is an edible fruit – botanically a berry – produced by several kinds
-of large herbaceous flowering plants in the genus Musa.&lt;/p&gt;
+&lt;p&gt;I’ve been involved in UI testing in some form or another since about 2008. Back then we were working on a large online (greenfield) Journal system using agile methods. For reasons I don’t want to bore you with it was decided to use Selenium to test via the UI. We used Test Driven Development for the Java code and then wrote an ‘acceptance test’ that proved the feature through the UI. The acceptance test was written using the Selenium IDE plugin in Firefox. It was kind of a record playback system. The build system was fairly clever and was able to run these ‘scripts’ in an automated fashion. We all thought it was cool.&lt;/p&gt;
 
-&lt;p&gt;In some countries, bananas used for cooking may be called “plantains”,
-distinguishing them from dessert bananas. The fruit is variable in size, color,
-and firmness, but is usually elongated and curved, with soft flesh rich in
-starch covered with a rind, which may be green, yellow, red, purple, or brown
-when ripe.&lt;/p&gt;</content><author><name>jill</name></author><summary type="html">A banana is an edible fruit – botanically a berry – produced by several kinds of large herbaceous flowering plants in the genus Musa.</summary></entry></feed>
+&lt;p&gt;Fast forward a few years, different company, different tech and we’re now wanting to do automated testing via the UI for a Bingo app on iOS. We picked Calabash and Cucumber and we wrote loads of UI tests. We ran it on our build server and demoed it to the rest of the company in our showcases. We all thought it was cool.&lt;/p&gt;
+
+&lt;p&gt;A bit later, same company, different client, different technology, we wanted to do a similar thing for a Javascript webapp Sportsbook. The testing technology isn’t massively relevant, but someone read a blog post on it and got excited by it because everyone else in the Javascript community was using it. There was a demo, a lot of people thought it was cool. However, a few were getting a little weary.&lt;/p&gt;
+
+&lt;p&gt;Fast forward to the present, again UI testing was requested for a Lottery app. A different technology was picked, different people were involved. It got demoed. People who were fairly new to the company thought it was cool. Those who were paying the bills were pretty peeved.&lt;/p&gt;
+
+&lt;p&gt;Just what is going wrong?&lt;/p&gt;
+
+&lt;h2 id=&quot;testing-via-the-ui-is-conceptually-easy-but-in-practise-quite-hard&quot;&gt;Testing via the UI is conceptually easy, but in practise quite hard&lt;/h2&gt;
+
+&lt;p&gt;It makes sense doesn’t it? We write apps with heavy amounts of UI, so performing a manual regression test is time consuming and error prone. A fellow Smith once had the following sage advice:&lt;/p&gt;
+
+&lt;p&gt;‘Never send a human to do a machine’s job’&lt;/p&gt;
+
+&lt;p&gt;So the desire is to automate it to save time and effort. There’s no shortage of tools around that claim to make it easy and with next to no technical skills. These are companies that want to sell you something so of course would say that. Whilst initially easy, maintainability is likely to be an issue.&lt;/p&gt;
+
+&lt;h2 id=&quot;ui-tests-are-notoriously-brittle&quot;&gt;UI tests are notoriously brittle&lt;/h2&gt;
+
+&lt;p&gt;In our experience, when a test suite gets to a certain size, you’ll start to notice intermittent failures. This can be any number of things, but the main one is timeouts. Due to the asynchronous nature of the UI, it may not return in a time you expect. In which case your test will fail. You can increase the timeouts to get around this, but this brings with it other problems.&lt;/p&gt;
+
+&lt;h2 id=&quot;ui-tests-are-slow&quot;&gt;UI tests are slow&lt;/h2&gt;
+
+&lt;p&gt;As UIs are designed for human interaction and give user feedback, they are slow. Enter text such as ‘flibble’ into a username field and you can see it type. When you add in transitions and things like swiping and scrolling it slows even further.&lt;/p&gt;
+
+&lt;h2 id=&quot;doing-too-much&quot;&gt;Doing too much&lt;/h2&gt;
+
+&lt;p&gt;There’s a tendency to automate a lot of different cases through the UI, because this is how testers would do it manually. For example, trying different combinations for a password strength-o-meter. As previously mentioned, interacting via the UI is slow and sometimes brittle.&lt;/p&gt;
+
+&lt;p&gt;If you’re using BDD tables (scenario outlines) this can make the problem much worse as it’s very easy to add another test example into the table which obviously will multiply the number of interactions in the one feature by the number of rows in the table. Potentially very expensive.&lt;/p&gt;
+
+&lt;h2 id=&quot;not-enough-technical-discipline&quot;&gt;Not enough technical discipline&lt;/h2&gt;
+
+&lt;p&gt;There are manual testers who want to get into automated testing as this is where the demand is. Not only does it require upskilling on the technology used, but also requires some of the discipline we expect from developers. Without it we’ve seen duplication, highly coupled tests to the UI, and poor maintainability.&lt;/p&gt;
+
+&lt;h2 id=&quot;focusing-on-tools-rather-than-collaboration&quot;&gt;Focusing on tools rather than collaboration&lt;/h2&gt;
+
+&lt;p&gt;Don’t get me wrong, picking the right tool is essential, but even if you have the perfect tool, without collaboration, it’s going to be difficult. What we’ve found is that:&lt;/p&gt;
+
+&lt;p&gt;The automated tests will be written after development and QA have completed. The test suite will be playing catch-up.
+No-one will trust the tests as they have had no input into them, or know what is in them.
+Because developers have no oversight of them, this will cause them to frequently break as they’re changing the code, but not the UI tests.
+The test will have no bearing on whether the Story is Job Done. Stories should only be considered ‘Job Done’ when all the tests pass and this should include the UI test for this particular feature, if it was agreed that it was needed.&lt;/p&gt;
+
+&lt;p&gt;The previous points are not just related to UI tests. Any tests that are done after the fact by a separate team will be problematic.&lt;/p&gt;
+
+&lt;h2 id=&quot;possible-solutions&quot;&gt;Possible solutions&lt;/h2&gt;
+&lt;h3 id=&quot;dont-silo-the-automation-team-from-the-developers-or-qa&quot;&gt;Don’t silo the automation team from the developers or QA.&lt;/h3&gt;
+
+&lt;p&gt;Automation needs to be a joined up approach and QA automation and developers need to work closely together, ideally pair.
+It should be the responsibility of the whole team, rather than just the automation engineer if a test breaks. If the UI changes in some way for a good reason, then it should be a team effort to change the test. If the test breaks, again, it should be a team effort to fix, not just an automation engineer.
+This collaborative approach is what Agile was meant to be about.&lt;/p&gt;
+
+&lt;h3 id=&quot;avoid-the-ui-as-much-as-possible&quot;&gt;Avoid the UI as much as possible&lt;/h3&gt;
+
+&lt;p&gt;As crazy as this sounds as we’re talking about UI testing we should try and avoid testing via the UI if possible. The password strength-o-meter mentioned above can be tested below the UI. It would be better to test the different combinations of passwords and their scores without the UI. The portion that we should test via the UI should be along the lines of:&lt;/p&gt;
+
+&lt;p&gt;“Given a score is returned, then it’s displayed on the screen”&lt;/p&gt;
+
+&lt;p&gt;We could have many different test cases below the UI that would be quick and robust then 1 or 2 basic tests via the UI.&lt;/p&gt;
+
+&lt;h3 id=&quot;make-the-apps-accessible&quot;&gt;Make the apps accessible&lt;/h3&gt;
+
+&lt;p&gt;Apps should be accessible and provide IDs to select important elements on the screen. Anything that we need to click as part of our test, or to verify should have an accessibility ID.&lt;/p&gt;
+
+&lt;p&gt;Tools such as Appium provide elements from the app as a DOM tree similar to a web browser. Like Selenium, Appium can select items by XPath. As with Selenium, you can make very brittle tests by making your XPaths too coupled to the structure of the page. You can use the ‘double-slash’ syntax in XPath to search for that element, but this is equally problematic as DOM trees can be huge, especially on Android. This can cause timeouts looking for elements. This is why it is highly recommended to use IDs instead.&lt;/p&gt;
+
+&lt;h3 id=&quot;dont-do-too-much&quot;&gt;Don’t do too much&lt;/h3&gt;
+
+&lt;p&gt;Don’t run too many combinations in a test case as mentioned previously. Pick important targeted examples that illustrate how it works.  If you must test a lot of different combinations of things, see if you can do it below the UI instead.&lt;/p&gt;
+
+&lt;p&gt;Speccing them out should be a collaborative process between BAs, developers and QA.&lt;/p&gt;
+
+&lt;h3 id=&quot;dont-treat-them-differently-to-other-tests&quot;&gt;Don’t treat them differently to other tests&lt;/h3&gt;
+
+&lt;p&gt;In particular make sure they can be run by anyone and make sure they’re visible to the team, preferably by running on a build server. It is no longer acceptable to say ‘but it works on my machine!’&lt;/p&gt;
+
+&lt;h3 id=&quot;treat-the-automation-code-the-same-as-the-production-code&quot;&gt;Treat the automation code the same as the production code&lt;/h3&gt;
+
+&lt;p&gt;Automated tests should have had the same discipline applied that TDD emphasizes with developers. Things such as:&lt;/p&gt;
+
+&lt;p&gt;Using source control (should be a given in this day and age).
+Committing to source control frequently. Preferably after each passing test.
+Running on a Continuous Integration server (again should be a given in this day and age). 
+Dropping tools and fixing breaking builds.
+Following ‘Clean Code’ principles such as removing duplication and refactoring
+Architecture. How to ‘layer’ the testing system so it is easy to reuse different components and easy to maintain.&lt;/p&gt;
+
+&lt;h3 id=&quot;create-specifications-not-scripts&quot;&gt;Create specifications, not scripts&lt;/h3&gt;
+
+&lt;p&gt;The tests should tell you what the feature is in business terms, not how to get there. For example a login test might read:&lt;/p&gt;
+
+&lt;p&gt;Given I’m on the home screen
+And I click on the ‘sign in’ element
+And I enter ‘dangerousdave’ into the ‘username’ field
+And I enter ‘flibble’ into the ‘password’ field
+When I click on the ‘login’ button
+Then I am on the home screen
+And the ‘balance’ element contains ‘50 dollars’&lt;/p&gt;
+
+&lt;p&gt;This is a script, not a specification. It’s also highly coupled to the UI, which means if the UI changes the test breaks and the specification no longer reflects what it is meant to do. It’s better to use a more declarative approach, such as:&lt;/p&gt;
+
+&lt;p&gt;Given a username of ‘dangerousdave’
+And a password of ‘flibble’
+When I attempt to login
+Then I should be logged in with a balance of ‘50 dollars’&lt;/p&gt;
+
+&lt;p&gt;If the UI changes in this instance, then this specification does not need to change.&lt;/p&gt;
+
+&lt;p&gt;BDD should talk in terms of business requirements, not clicking buttons. If using BDD, keep your features business English.&lt;/p&gt;
+
+&lt;h3 id=&quot;avoid-the-network&quot;&gt;Avoid the network&lt;/h3&gt;
+
+&lt;p&gt;Most apps require data from APIs. Problem is, most of the time you cannot rely on the data. APIs may be down or may not return what you are expecting. This will be a cause of instability. So mock your data!&lt;/p&gt;
+
+&lt;h3 id=&quot;collaborate-dont-silo&quot;&gt;Collaborate. Don’t silo&lt;/h3&gt;
+
+&lt;p&gt;Out of all the points, the non-technical one in the list is probably the most important. Collaborate on the specifications in your refinement sessions. Collaborate when writing the test. Collaborate if/when it fails. Collaborate, collaborate, collaborate. Don’t work in a silo!&lt;/p&gt;
+
+&lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h2&gt;
+
+&lt;p&gt;I started off this blog post by asking whether the bad reputation of UI testing is justified or are we doing it wrong.&lt;/p&gt;
+
+&lt;p&gt;I think the bad reputation is justified but a lot of the problems with it are some of the reasons I’ve mentioned above (so yes, we are doing it wrong). If your test suite is slow, no-one will want to wait for it to complete as we want fast feedback. Also, if they are intermittently failing, more and more time will be expended on trying to fix them, diverting precious resources away from high profile paying work.&lt;/p&gt;
+
+&lt;p&gt;If we focus the tests and limit their scope there is probably merit in doing them, but as with most things in life, do it in moderation.&lt;/p&gt;</content><author><name>jill</name></author><summary type="html">The perils of UI testing</summary></entry></feed>
