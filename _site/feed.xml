@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2021-01-25T22:53:04+00:00</updated><id>http://localhost:4000/feed.xml</id><entry><title type="html">Ui Testing</title><link href="http://localhost:4000/2021/01/25/ui-testing.html" rel="alternate" type="text/html" title="Ui Testing" /><published>2021-01-25T00:00:00+00:00</published><updated>2021-01-25T00:00:00+00:00</updated><id>http://localhost:4000/2021/01/25/ui-testing</id><content type="html" xml:base="http://localhost:4000/2021/01/25/ui-testing.html">&lt;h1 id=&quot;the-perils-of-ui-testing&quot;&gt;The perils of UI testing&lt;/h1&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2021-01-26T20:46:59+00:00</updated><id>http://localhost:4000/feed.xml</id><entry><title type="html">Ui Testing</title><link href="http://localhost:4000/2021/01/25/ui-testing.html" rel="alternate" type="text/html" title="Ui Testing" /><published>2021-01-25T00:00:00+00:00</published><updated>2021-01-25T00:00:00+00:00</updated><id>http://localhost:4000/2021/01/25/ui-testing</id><content type="html" xml:base="http://localhost:4000/2021/01/25/ui-testing.html">&lt;h1 id=&quot;the-perils-of-ui-testing&quot;&gt;The perils of UI testing&lt;/h1&gt;
 
 &lt;p&gt;UI automation testing has a fairly bad rep in our industry, but is it fair? Or is it because we are doing it wrong?&lt;/p&gt;
 
@@ -16,7 +16,7 @@
 
 &lt;p&gt;It makes sense doesn’t it? We write apps with heavy amounts of UI, so performing a manual regression test is time consuming and error prone. A fellow Smith once had the following sage advice:&lt;/p&gt;
 
-&lt;p&gt;&lt;em&gt;Never send a human to do a machine’s job&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;‘Never send a human to do a machine’s job’&lt;/em&gt;&lt;/p&gt;
 
 &lt;p&gt;So the desire is to automate it to save time and effort. There’s no shortage of tools around that claim to make it easy and with next to no technical skills. These are companies that want to sell you something so of course would say that. Whilst initially easy, maintainability is likely to be an issue.&lt;/p&gt;
 
@@ -42,10 +42,12 @@
 
 &lt;p&gt;Don’t get me wrong, picking the right tool is essential, but even if you have the perfect tool, without collaboration, it’s going to be difficult. What we’ve found is that:&lt;/p&gt;
 
-&lt;p&gt;The automated tests will be written after development and QA have completed. The test suite will be playing catch-up.
-No-one will trust the tests as they have had no input into them, or know what is in them.
-Because developers have no oversight of them, this will cause them to frequently break as they’re changing the code, but not the UI tests.
-The test will have no bearing on whether the Story is Job Done. Stories should only be considered ‘Job Done’ when all the tests pass and this should include the UI test for this particular feature, if it was agreed that it was needed.&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;The automated tests will be written after development and QA have completed. The test suite will be playing catch-up.&lt;/li&gt;
+  &lt;li&gt;No-one will trust the tests as they have had no input into them, or know what is in them.&lt;/li&gt;
+  &lt;li&gt;Because developers have no oversight of them, this will cause them to frequently break as they’re changing the code, but not the UI tests.&lt;/li&gt;
+  &lt;li&gt;The test will have no bearing on whether the Story is Job Done. Stories should only be considered ‘Job Done’ when all the tests pass and this should include the UI test for this particular feature, if it was agreed that it was needed.&lt;/li&gt;
+&lt;/ol&gt;
 
 &lt;p&gt;The previous points are not just related to UI tests. Any tests that are done after the fact by a separate team will be problematic.&lt;/p&gt;
 
@@ -84,12 +86,14 @@ This collaborative approach is what Agile was meant to be about.&lt;/p&gt;
 
 &lt;p&gt;Automated tests should have had the same discipline applied that TDD emphasizes with developers. Things such as:&lt;/p&gt;
 
-&lt;p&gt;Using source control (should be a given in this day and age).
-Committing to source control frequently. Preferably after each passing test.
-Running on a Continuous Integration server (again should be a given in this day and age). 
-Dropping tools and fixing breaking builds.
-Following ‘Clean Code’ principles such as removing duplication and refactoring
-Architecture. How to ‘layer’ the testing system so it is easy to reuse different components and easy to maintain.&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;Using source control (should be a given in this day and age).&lt;/li&gt;
+  &lt;li&gt;Committing to source control frequently. Preferably after each passing test.&lt;/li&gt;
+  &lt;li&gt;Running on a Continuous Integration server (again should be a given in this day and age).&lt;/li&gt;
+  &lt;li&gt;Dropping tools and fixing breaking builds.&lt;/li&gt;
+  &lt;li&gt;Following ‘Clean Code’ principles such as removing duplication and refactoring&lt;/li&gt;
+  &lt;li&gt;Architecture. How to ‘layer’ the testing system so it is easy to reuse different components and easy to maintain.&lt;/li&gt;
+&lt;/ol&gt;
 
 &lt;h3 id=&quot;create-specifications-not-scripts&quot;&gt;Create specifications, not scripts&lt;/h3&gt;
 

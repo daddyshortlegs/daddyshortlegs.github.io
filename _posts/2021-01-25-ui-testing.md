@@ -20,7 +20,7 @@ Just what is going wrong?
 
 It makes sense doesn’t it? We write apps with heavy amounts of UI, so performing a manual regression test is time consuming and error prone. A fellow Smith once had the following sage advice:
 
-*Never send a human to do a machine's job*
+*'Never send a human to do a machine's job'*
 
 So the desire is to automate it to save time and effort. There’s no shortage of tools around that claim to make it easy and with next to no technical skills. These are companies that want to sell you something so of course would say that. Whilst initially easy, maintainability is likely to be an issue.
 
@@ -46,10 +46,10 @@ There are manual testers who want to get into automated testing as this is where
 
 Don’t get me wrong, picking the right tool is essential, but even if you have the perfect tool, without collaboration, it’s going to be difficult. What we’ve found is that:
 
-The automated tests will be written after development and QA have completed. The test suite will be playing catch-up.
-No-one will trust the tests as they have had no input into them, or know what is in them.
-Because developers have no oversight of them, this will cause them to frequently break as they’re changing the code, but not the UI tests.
-The test will have no bearing on whether the Story is Job Done. Stories should only be considered ‘Job Done’ when all the tests pass and this should include the UI test for this particular feature, if it was agreed that it was needed.
+1. The automated tests will be written after development and QA have completed. The test suite will be playing catch-up.
+1. No-one will trust the tests as they have had no input into them, or know what is in them.
+1. Because developers have no oversight of them, this will cause them to frequently break as they’re changing the code, but not the UI tests.
+1. The test will have no bearing on whether the Story is Job Done. Stories should only be considered ‘Job Done’ when all the tests pass and this should include the UI test for this particular feature, if it was agreed that it was needed.
 
 The previous points are not just related to UI tests. Any tests that are done after the fact by a separate team will be problematic.
 
@@ -88,12 +88,12 @@ In particular make sure they can be run by anyone and make sure they’re visibl
 
 Automated tests should have had the same discipline applied that TDD emphasizes with developers. Things such as:
 
-Using source control (should be a given in this day and age).
-Committing to source control frequently. Preferably after each passing test.
-Running on a Continuous Integration server (again should be a given in this day and age). 
-Dropping tools and fixing breaking builds.
-Following ‘Clean Code’ principles such as removing duplication and refactoring
-Architecture. How to ‘layer’ the testing system so it is easy to reuse different components and easy to maintain.
+1. Using source control (should be a given in this day and age).
+1. Committing to source control frequently. Preferably after each passing test.
+1. Running on a Continuous Integration server (again should be a given in this day and age). 
+1. Dropping tools and fixing breaking builds.
+1. Following ‘Clean Code’ principles such as removing duplication and refactoring
+1. Architecture. How to ‘layer’ the testing system so it is easy to reuse different components and easy to maintain.
 
 ### Create specifications, not scripts
 
