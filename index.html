@@ -2,7 +2,21 @@
 layout: default
 title: Home
 ---
-<h1>Hello</h1>
+<h1>Andy's blog</h1>
+<p>I promise this blog will avoid divisive subjects such as:
+<ul>
+<li>Politics</li>
+<li>Religion</li>
+<li>Tabs vs spaces</li>
+</ul>
+</p>
 <p>I can't guarantee any witty banter! But you may find stuff that interested me at some point in time....</p>
 
+<ul>
+  {% for post in site.posts %}
+  <li>
+    <h2><a href="{{ post.url }}">{{ post.title }}</a> - {{ post.date | date_to_string }}</h2>
+  </li>
+  {% endfor %}
+</ul>
 

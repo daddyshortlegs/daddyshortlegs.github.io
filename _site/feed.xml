@@ -1,4 +1,90 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2021-01-26T20:46:59+00:00</updated><id>http://localhost:4000/feed.xml</id><entry><title type="html">Ui Testing</title><link href="http://localhost:4000/2021/01/25/ui-testing.html" rel="alternate" type="text/html" title="Ui Testing" /><published>2021-01-25T00:00:00+00:00</published><updated>2021-01-25T00:00:00+00:00</updated><id>http://localhost:4000/2021/01/25/ui-testing</id><content type="html" xml:base="http://localhost:4000/2021/01/25/ui-testing.html">&lt;h1 id=&quot;the-perils-of-ui-testing&quot;&gt;The perils of UI testing&lt;/h1&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2021-03-25T22:21:17+00:00</updated><id>http://localhost:4000/feed.xml</id><entry><title type="html">The Dotfiles</title><link href="http://localhost:4000/2021/03/25/the-dotfiles.html" rel="alternate" type="text/html" title="The Dotfiles" /><published>2021-03-25T00:00:00+00:00</published><updated>2021-03-25T00:00:00+00:00</updated><id>http://localhost:4000/2021/03/25/the-dotfiles</id><content type="html" xml:base="http://localhost:4000/2021/03/25/the-dotfiles.html">&lt;h2 id=&quot;aka-how-to-automate-your-mac&quot;&gt;AKA how to automate your Mac&lt;/h2&gt;
+
+&lt;p&gt;If you’ve been in IT long enough (probably about a week), you can’t help but notice those little files that start with a dot (unless you’re on Windows).&lt;/p&gt;
+
+&lt;p&gt;Show all files:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/all_files.png&quot; alt=&quot;All files&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Don’t show hidden files:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/no_hidden.png&quot; alt=&quot;No hidden files&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Most IT bods know this, even me. However most probably don’t know there’s a whole community around this stuff. Who knew?! Go and search on Github and you’ll see people have contributed their own repos that everyone calls ‘dotfiles’. These ‘dotfiles’ are often used as configuration files for various applications and you can tinker with them to your heart’s content (although I don’t accept any responsibility for breaking anything!).&lt;/p&gt;
+
+&lt;p&gt;I must admit, the pandemic must be really getting to me as I’ve got quite excited by hidden files, perhaps it was the lack of sunlight and intelligent conversation… but you can do cool or maybe useful things. For example, you can pimp up your terminal a bit, I found this bit quite fun. For example, this is the standard boring Mac terminal:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/boring.png&quot; alt=&quot;Boring terminal&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;We can set a environment variable called CLICOLOR to 1 and we get a nicer view (blue denotes a directory):&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/bit_of_colour.png&quot; alt=&quot;Bit of colour&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;You can also mess with the prompt, like so (this example is zsh), run:&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;export PROMPT=&quot;%n %F{green}%1~%f &quot;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/colour_prompt.png&quot; alt=&quot;Colourful prompt&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;In this case the %n is my username and the green bit is my current working directory. In this case the %F is the start of the green text and the %f delimits the end. If you want more info on these options, have a look here http://zsh.sourceforge.net/Doc/Release/Prompt-Expansion.html. There is even a ‘right prompt’ that you can set and you can do something cool and really useful like this:&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;export RPROMPT=&quot;%F{magenta}%*%f&quot;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Which gives us the time when we ran something:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/right_prompt.png&quot; alt=&quot;Colourful prompt&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;How useful is that? You can do all sorts of stuff like showing the git branch you’re currently working on. But what use is that as when you close the terminal and reload it you lose your changes. Obviously you chuck those commands in a dotfile, in this case .zshrc in your home directory. Ours would look like this:&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;export CLICOLOR=1
+export PROMPT=&quot;%n %F{green}%1~%f &quot;
+export RPROMPT=&quot;%F{magenta}%*%f&quot;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;I should add here you can do similar sorts of things in other shells such as bash, but MacOS has now moved to zsh.&lt;/p&gt;
+
+&lt;p&gt;There’s other stuff you can do. Vim is a bit dull as standard, so pimp that up as well. Create yourself another dotfile in your home directory called .vimrc and chuck this in it:&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;set tabstop=4
+syntax on
+set number
+set autoindent
+set expandtab
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Et voila, syntax highlighting for bash scripts (the content isn’t relevant):&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/vim.png&quot; alt=&quot;Colourful vim&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;You can literally tinker with this stuff for hours, seriously the fun never stops! But what happens when you get yourself a new Mac (or Linux machine) you have to do this all again. This is why people upload their configurations into repos on Github called dotfiles. The idea is you chuck your files onto github and when you need to reinstall, you clone it and run a script (that you write) to copy the files into the correct place. Please be careful not to put your credentials in Github though!&lt;/p&gt;
+
+&lt;p&gt;This does raise an interesting point though in that you still have to reinstall all your apps. Wouldn’t it be cool if we could automate the installation of those apps. We can! &lt;a href=&quot;https://brew.sh/&quot;&gt;Homebrew&lt;/a&gt; to the rescue. Head to that link and follow the one-liner of instructions.&lt;/p&gt;
+
+&lt;p&gt;I won’t go into too much detail on Homebrew but there’s 2 ways of installing stuff. Generally, if you want to install a command line tool like wget or Node.js you can do:&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;brew install wget
+brew install node
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;If it’s something bigger like an app with a UI on it, such as Firefox or even Microsoft Word, you can install it as a ‘cask’:&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;brew install --cask firefox
+brew install --cask microsoft-teams
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;These are the official apps and not dodgy ones, Homebrew just wraps the installation of these things with some scripts via the command line. I still can’t chuck my Mac out the window yet though as we still need to automatically install this stuff. But, if you create a Brewfile with contents like:&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;brew wget
+brew node
+cask firefox
+cask microsoft-teams
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;And run ‘&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;brew bundle&lt;/code&gt;’, then that will install everything in that file. Bung that in your dotfiles repo, add ‘brew bundle’ into your setup script et voila, you may have automated your Mac setup.&lt;/p&gt;
+
+&lt;p&gt;If you want to get an idea of what I did for mine, then have a look at my repo at my &lt;a href=&quot;https://github.com/daddyshortlegs/dotfiles&quot;&gt;dotfiles repo&lt;/a&gt; for inspiration and join the dotfiles party. In current Covid times, it’s really the only sort of party you should be going to!&lt;/p&gt;</content><author><name>andy</name></author><summary type="html">AKA how to automate your Mac</summary></entry><entry><title type="html">The Perils Of Ui Testing</title><link href="http://localhost:4000/2021/01/25/the-perils-of-ui-testing.html" rel="alternate" type="text/html" title="The Perils Of Ui Testing" /><published>2021-01-25T00:00:00+00:00</published><updated>2021-01-25T00:00:00+00:00</updated><id>http://localhost:4000/2021/01/25/the-perils-of-ui-testing</id><content type="html" xml:base="http://localhost:4000/2021/01/25/the-perils-of-ui-testing.html">&lt;h1 id=&quot;the-perils-of-ui-testing&quot;&gt;The perils of UI testing&lt;/h1&gt;
 
 &lt;p&gt;UI automation testing has a fairly bad rep in our industry, but is it fair? Or is it because we are doing it wrong?&lt;/p&gt;
 
